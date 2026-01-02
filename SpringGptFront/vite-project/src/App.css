@@ -1,79 +1,137 @@
+/* App.css */
+
 .App {
   text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 40px;
+
+  /* Ana Kart: Zeminden bir ton açık */
+  background-color: #1e1e1e; 
+  border-radius: 16px;
+  /* Koyu temada gölge yerine hafif bir çerçeve veya glow daha şık durur */
+  border: 1px solid #333; 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); 
 }
 
+/* --- TAB MENÜSÜ --- */
 .tabs {
   display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  background: #252526; /* Daha koyu bir şerit */
+  padding: 8px;
+  border-radius: 12px;
+  border: 1px solid #333;
 }
 
 button {
   padding: 10px 20px;
   cursor: pointer;
   border: none;
-  background-color: #f0f0f0;
-  font-weight: bold;
+  background-color: transparent;
+  color: #a0a0a0; /* Pasifken sönük gri */
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 button.activeTab {
-  background-color: #007bff;
+  background-color: #3b82f6; /* Modern, göz almayan bir mavi */
   color: #fff;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4); /* Butonun parlaması */
 }
 
+/* --- INPUT ALANI --- */
 input {
-  padding: 10px;
-  width: calc(100% - 22px);
-  margin-bottom: 10px;
+  padding: 15px;
+  width: 100%;
+  margin-bottom: 20px;
   box-sizing: border-box;
+
+  /* Koyu Input Stili */
+  background-color: #2d2d2d;
+  border: 1px solid #444;
+  color: #fff;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
+input::placeholder {
+  color: #666; /* Placeholder daha silik olsun */
+}
+
+input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* --- RESİM ALANI --- */
 .tab-content {
   margin-top: 20px;
+  animation: fadeIn 0.4s ease-out;
 }
 
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 15px;
   margin-top: 20px;
 }
 
 img {
   width: 100%;
   height: auto;
-  border: 2px solid #ccc;
-  border-radius: 5px;
+  border-radius: 8px;
+  border: 1px solid #444; /* Resim sınırlarını belirginleştirmek için ince çizgi */
+  transition: transform 0.2s;
+}
+
+img:hover {
+  transform: scale(1.02);
+  border-color: #3b82f6;
 }
 
 .empty-image-slot {
   width: 100%;
-  height: 0;
-  padding-bottom: 75%; /* Maintain aspect ratio for empty slots */
-  border: 2px dashed #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
+  padding-bottom: 100%;
+  border: 2px dashed #444; /* Koyu gri kesikli çizgi */
+  border-radius: 8px;
+  background-color: #252526;
+  position: relative;
 }
 
+/* --- ÇIKTI ALANI (Recipe Text) --- */
 .output {
-  margin-top: 20px;
+  margin-top: 30px;
   text-align: left;
-  background-color: #f4f4f4;
-  padding: 10px;
-  border-radius: 5px;
 }
 
 .recipe-text {
-  max-width: 100%; /* Adjust based on your specific layout needs */
-  padding: 10px;
-  box-sizing: border-box; /* Ensures padding is included in width calculation */
-  word-wrap: break-word;
-  overflow-y: auto; /* Allows scrolling for excessive text */
-  font-size: calc(12px + 0.5vw); /* Responsive font size */
-  line-height: 1.6; /* Improves readability */
-  border: 1px solid #ccc; /* Optional: adds a border around the text container */
-  margin-bottom: 20px; /* Spacing below the text container */
+  max-width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #d4d4d4; /* Tam beyaz değil, okunaklı gri */
+  
+  /* Kod bloğu görünümü */
+  background-color: #252526; 
+  border: 1px solid #333;
+  border-left: 3px solid #3b82f6; /* Sol tarafta mavi vurgu */
+  border-radius: 8px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
 }

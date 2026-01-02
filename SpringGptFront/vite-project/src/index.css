@@ -1,13 +1,15 @@
+/* index.css */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif; /* Varsa Inter, yoksa sistem fontu */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Göz yormayan koyu zemin (VS Code tarzı) */
+  background-color: #121212; 
+  color: #e0e0e0; /* Parlak beyaz değil, yumuşak gri-beyaz */
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, monospace;
 }
